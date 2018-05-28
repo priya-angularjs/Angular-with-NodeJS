@@ -1,0 +1,8 @@
+<div class="container">
+  <h3>Todos</h3>
+  <div *ngIf="todos.length>0">
+    <li class="col md-8" *ngFor="let todo of todos" style="list-style:none">
+      <span class="col md-6">{{todo.name}} {{todo.address}} {{todo.mobile_no}}</span>
+    </li>
+  </div>
+</div>

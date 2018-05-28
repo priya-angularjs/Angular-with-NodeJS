@@ -1,0 +1,21 @@
+.breadcrumb {
+  padding: 15px 5px 10px 20px;
+  list-style: none;
+  background-color: #fafafa;
+  border-radius: 4px;
+}
+.crumbSize{
+  color: #298495;
+  text-decoration: none;
+  font-size: 20px;
+}
+a:focus, a:hover {
+  color: #fafafa;
+  text-decoration: underline;
+}
+.breadcrumb>li+li:before {
+  padding: 0px;
+  color: #298495;
+  content: "/\00a0";
+  font-size: 20px;
+}

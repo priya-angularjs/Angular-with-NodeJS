@@ -1,0 +1,86 @@
+
+<div class="col-md-3">
+<!--  <mat-card>
+    <mat-toolbar class="event-title">Create Event</mat-toolbar>
+
+    <button mat-icon-button class="text-blue" (click)="select('#0073b7')">
+      <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+    </button>
+    <button mat-icon-button class="text-aqua" (click)="select('#00c0ef')">
+      <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+    </button> <button mat-icon-button class="text-light-blue" (click)="select('#3c8dbc')">
+    <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+  </button> <button mat-icon-button class="text-teal" (click)="select('#39cccc')">
+    <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+  </button> <button mat-icon-button class="text-yellow" (click)="select('#f39c12')">
+    <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+  </button>
+    <button mat-icon-button class="text-orange" (click)="select('#ff851b')">
+      <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+    </button> <button mat-icon-button class="text-green" (click)="select('#00a65a')">
+    <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+  </button> <button mat-icon-button class="text-lime" (click)="select('#01ff70')">
+    <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+  </button> <button mat-icon-button class="text-red" (click)="select('#dd4b39')">
+    <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+  </button>
+    <button mat-icon-button class="text-purple" (click)="select('#605ca8')">
+      <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+    </button>
+    <button mat-icon-button class="text-fuchsia" (click)="select('#f012be')">
+      <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+    </button>
+    <button mat-icon-button class="text-muted" (click)="select('#777')">
+      <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+    </button> <button mat-icon-button class="text-navy" (click)="select('#001f3f')">
+    <mat-icon aria-label="Example icon-button with a heart icon"><i class="fa fa-square"></i></mat-icon>
+  </button>
+    <div class="box-body">  <form  [formGroup]="addEventForm">
+
+      <div class="input-group event-width">
+          <input  type="text" class="form-control" placeholder="Event Title" formControlName="title" required>
+        <div class="input-group-btn">
+          &lt;!&ndash;  <button type="button" (click)="add()" pButton  label="Show"></button>&ndash;&gt;
+          <button type="button" class="btn btn-primary btn-flat" [style.background-color]="color" label="add"></button>
+        </div>
+        &lt;!&ndash; /btn-group &ndash;&gt;
+      </div>
+      <div>
+        <div class="input-group location-width">
+          <input  type="text" class="form-control" placeholder="Location" formControlName="location" required>
+          &lt;!&ndash; /btn-group &ndash;&gt;
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Start Date</h4>
+          <p-calendar formControlName="startDate" [showTime]="true" hourFormat="12" readonlyInput="true" required></p-calendar>
+        </div>
+        <div class="col-md-6">
+          <h4>End Date</h4>
+          <p-calendar formControlName="endDate" [showTime]="true" hourFormat="12" readonlyInput="true" required></p-calendar>
+        </div>
+      </div></form>
+    </div>
+    <button mat-raised-button color="primary"  (click)="addEvent(addEventForm)" [disabled]="!addEventForm.valid">  <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>Add</button>
+    <button mat-raised-button color="primary"  (click)="reset()"><mat-icon aria-label="Example icon-button with a heart icon">refresh</mat-icon>Reset</button>
+  </mat-card>-->
+
+  <mat-card class="card-length">
+    <mat-toolbar class="event-title">Event Location</mat-toolbar>
+    <div class="dropdown-length">
+      <p-dropdown [options]="locations"  placeholder="Select a City" optionLabel="label" (onChange)="locationEvent($event)" [style]="{'width':'245px'}"></p-dropdown>
+    </div>
+  </mat-card>
+</div>
+<div class="col-md-9">
+  <button mat-fab color="primary" (click)="getEvent()"><i class="fa fa-refresh"></i></button>
+<mat-card class="calendar-design">
+
+  <p-schedule [events]="calendarData" [header]="header" [eventLimit]="4" [droppable]="true" [editable]="true" dragOpacity=0.50  [style.background-color]="color"
+                                              (onDayClick)="dayClickEvent($event)">
+  </p-schedule>
+</mat-card></div>
+
+
